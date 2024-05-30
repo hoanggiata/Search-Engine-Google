@@ -26,6 +26,17 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+.rounded-t-none {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.rounded-b-none{
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
