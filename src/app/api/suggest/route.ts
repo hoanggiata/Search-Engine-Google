@@ -5,6 +5,5 @@ export async function GET(request: NextRequest) {
     const searchParams = request.nextUrl.searchParams;
     const term = searchParams.get("term");
     const result = await Suggest.google(term);
-    console.log(result);
     return Response.json(result);
 }

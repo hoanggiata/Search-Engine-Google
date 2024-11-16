@@ -42,3 +42,30 @@ body {
     text-wrap: balance;
   }
 }
+html, body {
+  overflow-x: hidden;
+  overflow-y: hidden;
+  overscroll-behavior: none;
+  height: 100%;
+}
+
+/* Apply to the entire body or a specific container */
+body {
+  scrollbar-width: thin;
+  scrollbar-color: #A9A9A9 #1a1c1d;
+}
+
+/* For WebKit browsers */
+body::-webkit-scrollbar {
+  width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #1a1c1d;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #A9A9A9;
+  border-radius: 10px;
+  border: 3px solid #1a1c1d;
+}
