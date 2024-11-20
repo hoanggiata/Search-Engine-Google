@@ -1,6 +1,7 @@
 "use client"
-
-export default function LinkComponent({item} : any) {
+import { useEffect, useState } from 'react';
+export default function LinkComponent({item} : any) {  
+    const [ogImage, setOgImage] = useState("");
     const removeQuotes = (str) => {
         return str.replace(/"/g, "");
     };
@@ -13,12 +14,34 @@ export default function LinkComponent({item} : any) {
         }
         return removeQuotes(str);
     }
-      
+
+    // const fetchOgImage = async (url) => {
+    //     try {
+    //         const respond = await fetch(url);
+    //         const data = await respond.text();
+    //         const $ = cheerio.load(data);
+    //         const ogImage = $('meta[property="og:image"]').attr('content');
+    //         console.log("ogImage",ogImage);
+    //          return ogImage || null;
+    //     } catch (error) {
+    //         console.error('Error fetching OG image:', error); return null;
+    //     }
+    // } 
+    // useEffect(() => {
+    //     const getOgImage = async () => {
+    //         const image = await fetchOgImage(item.link);
+    //         if(image !== null){setOgImage(image ?? "");}
+    //     }
+    //     getOgImage();
+    // },[]);
     return (
         <div className="mb-7 w-[600px]">
             <div className="">
                 <div className=" relative">
-                    <span className=" absolute flex bg-[#fff] border rounded-[50%] w-7 h-7 mt-1"></span> 
+                    <span className=" absolute flex bg-[#fff] border rounded-[50%] w-7 h-7 mt-1">
+                        <div className="">
+                        </div>
+                    </span> 
                     <div className=" text-[12px] ml-10">
                         <span dangerouslySetInnerHTML={{__html: removeQuotes(item.title)}}></span>
                     </div> 

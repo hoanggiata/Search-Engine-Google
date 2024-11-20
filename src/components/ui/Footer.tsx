@@ -1,6 +1,6 @@
 export default function Footer() {
     return (
-        <footer className="w-full bg-gray-800 text-base">
+        <footer className="w-full bg-gray-800 text-base bottom-0 left-0 right-0">
             <div className=" w-full pt-[10px] pb-[10px] pl-[20px] pr-[20px]">
                 VietNam
             </div>
