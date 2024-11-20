@@ -4,8 +4,8 @@ export async function GET(request: NextRequest) {
     const page = Number(request.nextUrl.searchParams.get("page") ?? "1");
     const startIndex = (page - 1) * 10 + 1;
     const searchTerm = request.nextUrl.searchParams.get("term");  
-    const apiKey = process.env.NEXT_PUBLIC_API_KEY;
-    const cx = process.env.NEXT_PUBLIC_ENGINE_ID;
+    const apiKey = process.env.NEXT_PUBLIC_API_KEY as string;
+    const cx = process.env.NEXT_PUBLIC_ENGINE_ID as string;
     const url = `https://www.googleapis.com/customsearch/v1?q=${encodeURIComponent(searchTerm)}&key=${apiKey}&cx=${cx}&start=${startIndex}`;
 
     try {
